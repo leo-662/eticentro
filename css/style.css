@@ -1,0 +1,220 @@
+/* 1. Variables de Color (Estándar Profesional) */
+:root {
+    --color-principal: #303690;
+    --color-secundario-claro: #8dc9e1;
+    --color-acento: #21a2d4;
+    --color-neutro-claro: #ffffff;
+    --color-neutro-oscuro: #000000;
+}
+
+/* 2. Reset Básico y Tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-neutro-oscuro);
+    background-color: var(--color-neutro-claro);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 3. Estilos de la Cabecera (Header y Nav) */
+#header {
+    background-color: var(--color-principal);
+    color: var(--color-neutro-claro);
+    display: flex; /* Usamos Flexbox para alinear logo y menú */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky; /* Fija la cabecera al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu ul li a {
+    color: var(--color-neutro-claro);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    background-color: var(--color-acento);
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    color: var(--color-neutro-claro);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 4. Estilos de Secciones y Botones CTA */
+.hero-section {
+    background-color: var(--color-principal);
+    color: var(--color-neutro-claro);
+    padding: 150px 0;
+    text-align: center;
+    /* Un degradado simple para el fondo de inicio podría ser atractivo */
+    background-image: linear-gradient(135deg, var(--color-principal) 0%, #444a99 100%); 
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-acento);
+    color: var(--color-neutro-claro);
+    text-decoration: none;
+    padding: 10px 25px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--color-secundario-claro);
+    color: var(--color-principal);
+}
+
+.content-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Color de fondo alternado para secciones para mejor diferenciación */
+#empaque, #senalizacion {
+    background-color: var(--color-secundario-claro);
+}
+
+.content-section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: var(--color-principal);
+    text-align: center;
+}
+
+/* Estilo para rejilla de productos (Ej. Etiqueta en Rollo) */
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.product-item {
+    background-color: var(--color-neutro-claro);
+    color: var(--color-principal);
+    border: 2px solid var(--color-principal);
+    padding: 20px;
+    margin: 10px;
+    width: 30%; /* 3 por fila */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Estilo de la Sección Contacto (Formulario) */
+.form-section {
+    padding: 80px 0;
+    background-color: var(--color-principal);
+    color: var(--color-neutro-claro);
+    text-align: center;
+}
+
+.form-section h2 {
+    color: var(--color-neutro-claro);
+}
+
+.form-section form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-section textarea {
+    min-height: 150px;
+}
+
+.form-section .cta-button {
+    /* El botón usa los mismos estilos que el CTA general */
+    margin-top: 0;
+}
+
+/* 6. Estilos del Footer */
+footer {
+    background-color: var(--color-neutro-oscuro);
+    color: var(--color-neutro-claro);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--color-secundario-claro);
+    text-decoration: none;
+}
+
+/* 7. Media Queries (Responsividad para Móviles) */
+@media (max-width: 768px) {
+    /* Ocultamos el menú normal y mostramos el botón */
+    .nav-menu {
+        display: none; 
+    }
+    
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Reducir el padding de la sección hero en móviles */
+    .hero-section {
+        padding: 100px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    /* Productos apilados en móvil */
+    .product-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
