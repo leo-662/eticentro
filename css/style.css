@@ -194,15 +194,36 @@ footer a {
 
 /* 7. Media Queries (Responsividad para Móviles) */
 @media (max-width: 768px) {
-    /* Ocultamos el menú normal y mostramos el botón */
-    .nav-menu {
-        display: none; 
-    }
+    /* ... (código que ya tenías) ... */
     
-    .menu-toggle {
-        display: block; 
+    /* Configuración Inicial para Ocultar el Menú en Móvil */
+    .nav-menu {
+        display: none; /* Estaba oculto */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Colócalo justo debajo del header */
+        left: 0;
+        background-color: var(--color-principal); /* Mismo color del header */
+        padding-bottom: 10px;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
     }
 
+    /* Regla para MOSTRAR el menú cuando JavaScript añade la clase 'nav-open' */
+    .nav-menu.nav-open {
+        display: flex; /* ¡Lo mostramos al hacer click! */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
     /* Reducir el padding de la sección hero en móviles */
     .hero-section {
         padding: 100px 0;
