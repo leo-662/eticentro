@@ -1,20 +1,23 @@
-/**
- * Archivo: script.js
- * Propósito: Contener la lógica interactiva del sitio web de Eticentro.
- * * Funciones Pendientes:
- * 1. Toggle del Menú de Navegación en vistas móviles.
- * 2. Validación del formulario de la sección Contacto.
- * 3. Smooth scrolling para los enlaces de anclaje (opcional).
- */
-
-// Ejemplo de cómo iniciar la funcionalidad del menú de hamburguesa
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Seleccionamos los elementos clave del DOM
     const toggleButton = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    // Aquí iría el código para mostrar/ocultar navMenu al hacer clic en toggleButton
-    // Por ahora, solo es una estructura.
-    if (toggleButton) {
-        // console.log("¡El sitio web de Eticentro está listo para su funcionalidad JS!");
+    // 2. Verificamos que ambos elementos existan antes de añadir el evento
+    if (toggleButton && navMenu) {
+        
+        // 3. Añadimos un "escuchador de eventos" (event listener) al botón
+        toggleButton.addEventListener('click', () => {
+            // Cuando se hace click, alternamos la clase 'nav-open' en el menú
+            // Si la tiene, la quita (oculta); si no la tiene, la pone (muestra)
+            navMenu.classList.toggle('nav-open');
+        });
+
+        // OPCIONAL: Cerrar el menú al hacer clic en un enlace (útil en móviles)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('nav-open');
+            });
+        });
     }
 });
