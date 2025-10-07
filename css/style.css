@@ -194,9 +194,15 @@ footer a {
 
 /* 7. Media Queries (Responsividad para Móviles) */
 @media (max-width: 768px) {
-    /* ... (código que ya tenías) ... */
+/* Ocultamos el menú normal de escritorio en móvil */
+    .nav-menu {
+        display: none; 
+    }
     
-    /* Configuración Inicial para Ocultar el Menú en Móvil */
+    /* Hacemos visible el botón de hamburguesa en móvil */
+    .menu-toggle {
+        display: block; 
+    }    /* Configuración Inicial para Ocultar el Menú en Móvil */
     .nav-menu {
         display: none; /* Estaba oculto */
         flex-direction: column;
